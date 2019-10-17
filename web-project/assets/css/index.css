@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300,400|Pacifico";
+﻿@import "https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300,400|Pacifico";
 
 	.inner, .slider-container {
 		margin: 0 auto;
@@ -448,11 +448,16 @@
 		}
 		#footer ul li .icon:before {
 			margin-left: -1em;
+
 		}
 	}
 
 /*Contato*/
 
 	#contactForm{
-		text-align: center;
+		text-align: left;
+	}
+
+	#text.info {
+		text-align:right;
 	}
