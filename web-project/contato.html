@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
 	<head>
 		<title>Orderfy</title>
@@ -20,33 +20,61 @@
             <p>Deixe aqui alguns dados para que possamos entrar em contato.</p>
         </div>
         <form id="contactForm">
-                <input type="text" name = "name"
-                placeholder="Nome" style="border-top:0 none;border-right:0 none;border-left:0 none;">
+		<div>
+                	<p><input type="text" name = "name"
+	                placeholder="Nome" style="border-top:0 none;border-right:0 none;border-left:0 none;">
+        	        </p>
+			<p>
+	                <input type="text" name = "sobrenome"
+        	        placeholder="Sobrenome" style="border-top:0 none;border-right:0 none;border-left:0 none;">
+			</p>
 
-                <input type="number" name = "phone" placeholder="Celular" 
-                style="border-top:0 none;border-right:0 none;border-left:0 none;">
+			<p>
+        	        <input type="number" name = "phone" placeholder="Celular" 
+                	style="border-top:0 none;border-right:0 none;border-left:0 none;">
+			</p>
 
-                <input type="email" name = "email" placeholder="e-mail" 
-                style="border-top:0 none;border-right:0 none;border-left:0 none;">
 
-                <input type="radio" name = "personType" value="Pessoa Física" 
-                style="border-top:0 none;border-right:0 none;border-left:0 none;">
+			<p>
+	                <input type="email" name = "email" placeholder="E-mail"  style="border-top:0 none;border-right:0 none;border-left:0 none;">
+			</p>
 
-                <input type="radio" name = "personType" value="Pessoa Jurídica" 
-                style="border-top:0 none;border-right:0 none;border-left:0 none;">
 
-                <select style="border-top:0 none;border-right:0 none;border-left:0 none;">
-                    <option>Nosso sistema</option>
-                    <option>Dúvidas internas</option>
-                    <option>Trabalhe conosco</option>
-                    <option>Outro</option>
-                </select>
+			<select style="border-top:0 none;border-right:0 none;border-left:0 none;none;padding:1%;">">
+	                    <option>Pessoa Física</option>
+	                    <option>Pessoa Jurídica</option>            
+	                </select>
 
-                <input type="textarea" name = "info" placeholder="Informações..." 
-                style="border-top:0 none;border-right:0 none;border-left:0 none;">
+	                <select style="border-top:0 none;border-right:0 none;border-left:0 none;padding:1%;">
+        	            <option>Nosso sistema</option>
+                	    <option>Dúvidas internas</option>
+	                    <option>Trabalhe conosco</option>
+        	            <option>Outro</option>
+	                </select>
+
+			<p>
+				<textarea id = "textinfo"  type="textarea" name="info" placeholder="Informações..." style="width: 300px;height: 30px;margin:1%;margin-left:0%;"></textarea>
+			</p>
+		</div>
+
+
+
+
+
+            
+
+                
+
+
+
+
+                	
+		<div>
+                <a href="#" class="button right">Enviar</a>
+		</div>
                 
         </form>
-
+<br>
 		<footer id="footer">
 			<div class="inner">
 				<ul class="actions">
@@ -54,7 +82,7 @@
                         <a href="contato.html" class="button contact">Entre em contato!</a>
                     </li>
 				</ul>
-			</div>
+			</div> 
 		</footer>
 	</body>
 </html>
