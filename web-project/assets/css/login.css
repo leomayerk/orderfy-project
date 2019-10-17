@@ -1,0 +1,60 @@
+div.form_Login {
+    width: 25%;
+    border: 5px solid #970d0ddd;
+    padding: 3%;
+    margin-top: 10%;
+    margin-left: 35%;
+    text-align: center;
+    align-content: center;
+}
+
+.login_box{
+    padding: 5%;
+    margin: 2%;
+}
+
+.submitButton {
+    border: #970d0ddd;
+    background-color: #970d0ddd;
+    margin: 5%;
+    padding: 2%;
+}
+
+td.input_Login {
+    margin: 3%;
+    padding: 10%;
+    border: 10%;
+    border: 1cm;
+    background-color: #970d0ddd;;
+}
+
+input.loginButton {
+    background-color: #970d0ddd;
+    border-radius: 4px;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    height: 3.5em;
+    line-height: 3.5em;
+    padding: 0 3.5em;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0.75;
+    margin: 8px 0;
+}
+
+input.forgotPass {
+    display: none;
+    position: relative;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;;
+}
