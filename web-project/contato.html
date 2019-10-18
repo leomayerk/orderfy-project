@@ -21,47 +21,48 @@
 		<p>Deixe aqui alguns dados para que possamos entrar em contato.</p>
 	</div>
 	<form id="contactForm" action="validateForm()">
-		<div>
+		<div id="externa">
 			<p>
 				<input type="text" name="name" placeholder="Nome" 
-					style="border-top:0 none;border-right:0 none;border-left:0 none;">
+					style="border-top:1;border-right:1;border-left:1;width:300px;height:30px">
 			</p>
 
 			<p>
 				<input type="text" name="sobrenome" placeholder="Sobrenome" 
-					style="border-top:0 none;border-right:0 none;border-left:0 none;">
+					style="border-top:1;border-right:1;border-left:1;width:300px;height:30px">
 			</p>
 
 			<p>
 				<input type="number" name="phone" placeholder="Celular"	
-					style="border-top:0 none;border-right:0 none;border-left:0 none;">
+					style="border-top:1;border-right:1;border-left:1;width:300px;height:30px">
 			</p>
 
 
 			<p>
 				<input type="email" name="email" placeholder="E-mail" 
-					style="border-top:0 none;border-right:0 none;border-left:0 none;">
+					style="border-top:1;border-right:1;border-left:1;width:300px;height:30px">
 			</p>
 
-			<select style="border-top:0 none;border-right:0 none;border-left:0 none;padding:1%;">
+			<select style="border-top:1;border-right:1;border-left:1;padding:1%;">
 				<option>Pessoa Física</option>
 				<option>Pessoa Jurídica</option>
 			</select>
 
-			<select style="border-top:0 none;border-right:0 none;border-left:0 none;padding:1%;">
+			
+			<select style="border-top:1;border-right:1;border-left:1;padding:0.9%;">
 				<option>Nosso sistema</option>
 				<option>Dúvidas internas</option>
 				<option>Trabalhe conosco</option>
 				<option>Outro</option>
 			</select>
-
-			<p>
-				<textarea id="textinfo" type="textarea" name="info" placeholder="Informações..."
-					style="width: 300px;height: 30px;margin:1%;margin-left:0%;"></textarea>
-			</p>
+			
+			<div id="informacoes">
+				<textarea id="textinfo" rows="10" cols="40" type="textarea" name="info" placeholder="Informações..."
+					style="resize:vertical;; margin:1%;margin-left:0.8%;"></textarea>
+			</div>
+			<div> <a href="#" class="button right">Enviar</a> </div>
 		</div>
-
-		<div> <a href="#" class="button right">Enviar</a> </div>
+		
 
 	</form>
 	<br>
