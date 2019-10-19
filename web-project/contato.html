@@ -9,59 +9,62 @@
 
 <body>
 	<header id="header">
-		<a href="contato.html" class="logo">Orderfy</a>
+		<a href="home.html" class="logo">Orderfy</a>
 		<nav class="right">
-			<a href="#" class="button right">Entrar</a>
+			<a href="login.html" class="button right">Entrar</a>
 			<a href="#" class="button right">Registre-se</a>
 		</nav>
 	</header>
+	
+	<div>
+		<div id="contactTitle" class="formHeadContato">
+			<h1>Logo entramos em contato! ;)<h1>
+			<p>Deixe aqui alguns dados para que possamos entrar em contato.</p>
+		</div>	
+		<form id="contactForm" action="validateForm()">
+			<div>
+				<p>
+					<input type="text" name="name" placeholder="Nome"
+						style="border-top:0 none;border-right:0 none;border-left:0 none;">
+				</p>
 
-	<div id="contactTitle">
-		<h1>Logo entramos em contato! ;)</h1>
-		<p>Deixe aqui alguns dados para que possamos entrar em contato.</p>
+				<p>
+					<input type="text" name="sobrenome" placeholder="Sobrenome"
+						style="border-top:0 none;border-right:0 none;border-left:0 none;">
+				</p>
+
+				<p>
+					<input type="number" name="phone" placeholder="Celular"
+						style="border-top:0 none;border-right:0 none;border-left:0 none;">
+				</p>
+
+
+				<p>
+					<input type="email" name="email" placeholder="E-mail"
+						style="border-top:0 none;border-right:0 none;border-left:0 none;">
+				</p>
+
+				<select style="border-top:0 none;border-right:0 none;border-left:0 none;padding:1%;">
+					<option>Pessoa Física</option>
+					<option>Pessoa Jurídica</option>
+				</select>
+
+				<select style="border-top:0 none;border-right:0 none;border-left:0 none;padding:1%;">
+					<option>Nosso sistema</option>
+					<option>Dúvidas internas</option>
+					<option>Trabalhe conosco</option>
+					<option>Outro</option>
+				</select>
+
+				<p>
+					<textarea id="textinfo" type="textarea" name="info" placeholder="Informações..."
+						style="width: 300px;height: 30px;margin:1%;margin-left:0%;"></textarea>
+				</p>
+			</div>
+
+			<div> <a href="#" class="button right">Enviar</a> </div>
+
 	</div>
-	<form id="contactForm" action="validateForm()">
-		<div>
-			<p>
-				<input type="text" name="name" placeholder="Nome" 
-					style="border-top:0 none;border-right:0 none;border-left:0 none;">
-			</p>
-
-			<p>
-				<input type="text" name="sobrenome" placeholder="Sobrenome" 
-					style="border-top:0 none;border-right:0 none;border-left:0 none;">
-			</p>
-
-			<p>
-				<input type="number" name="phone" placeholder="Celular"	
-					style="border-top:0 none;border-right:0 none;border-left:0 none;">
-			</p>
-
-
-			<p>
-				<input type="email" name="email" placeholder="E-mail" 
-					style="border-top:0 none;border-right:0 none;border-left:0 none;">
-			</p>
-
-			<select style="border-top:0 none;border-right:0 none;border-left:0 none;padding:1%;">
-				<option>Pessoa Física</option>
-				<option>Pessoa Jurídica</option>
-			</select>
-
-			<select style="border-top:0 none;border-right:0 none;border-left:0 none;padding:1%;">
-				<option>Nosso sistema</option>
-				<option>Dúvidas internas</option>
-				<option>Trabalhe conosco</option>
-				<option>Outro</option>
-			</select>
-
-			<p>
-				<textarea id="textinfo" type="textarea" name="info" placeholder="Informações..."
-					style="width: 300px;height: 30px;margin:1%;margin-left:0%;"></textarea>
-			</p>
-		</div>
-
-		<div> <a href="#" class="button right">Enviar</a> </div>
 
 	</form>
 	<br>

@@ -2,10 +2,11 @@ div.form_Login {
     width: 25%;
     border: 5px solid #970d0ddd;
     padding: 3%;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 35%;
     text-align: center;
     align-content: center;
+    border-radius: 4px;
 }
 
 .login_box{

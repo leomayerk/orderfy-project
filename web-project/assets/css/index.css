@@ -454,10 +454,17 @@
 
 /*Contato*/
 
-	#contactForm{
-		text-align: left;
-	}
+	#externa {
+		align-items: center;
+		text-align: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		}
 
-	#text.info {
-		text-align:right;
+	#contactTitle{
+		text-align: center;
+	}
+	#informacoes {
+		align-items: center;
 	}
