@@ -15,39 +15,15 @@
 			<a href="#" class="button right">Registre-se</a>
 		</nav>
 	</header>
-	
-	<div>
-		<div id="contactTitle" class="formHeadContato">
-			<h1>Logo entramos em contato! ;)<h1>
-			<p>Deixe aqui alguns dados para que possamos entrar em contato.</p>
-		</div>	
-		<form id="contactForm" action="validateForm()">
-			<div>
-				<p>
-					<input type="text" name="name" placeholder="Nome"
-						style="border-top:0 none;border-right:0 none;border-left:0 none;">
-				</p>
 
-<<<<<<< HEAD
-				<p>
-					<input type="text" name="sobrenome" placeholder="Sobrenome"
-						style="border-top:0 none;border-right:0 none;border-left:0 none;">
-				</p>
-
-				<p>
-					<input type="number" name="phone" placeholder="Celular"
-						style="border-top:0 none;border-right:0 none;border-left:0 none;">
-				</p>
-
-=======
 	<div id="contactTitle">
 		<h1>Logo entramos em contato! ;)</h1>
 		<p>Deixe aqui alguns dados para que possamos entrar em contato.</p>
 	</div>
-	<form id="contactForm" action="validateForm()">
+	<form id="contactForm" onsubmit="return validateForm ();">
 		<div id="externa">
 			<p>
-				<input type="text" name="name" placeholder="Nome" 
+				<input type="text" name="nome" placeholder="Nome" id="nome"
 					style="border-top:1;border-right:1;border-left:1;width:300px;height:30px">
 			</p>
 
@@ -57,41 +33,14 @@
 			</p>
 
 			<p>
-				<input type="number" name="phone" placeholder="Celular"	
+				<input type="number" name="phone" placeholder="DDD + Celular"	
 					style="border-top:1;border-right:1;border-left:1;width:300px;height:30px">
 			</p>
->>>>>>> 3607afe82cac430b2d90656731f93398e7170e68
 
-				<p>
-					<input type="email" name="email" placeholder="E-mail"
-						style="border-top:0 none;border-right:0 none;border-left:0 none;">
-				</p>
-
-<<<<<<< HEAD
-				<select style="border-top:0 none;border-right:0 none;border-left:0 none;padding:1%;">
-					<option>Pessoa Física</option>
-					<option>Pessoa Jurídica</option>
-				</select>
-
-				<select style="border-top:0 none;border-right:0 none;border-left:0 none;padding:1%;">
-					<option>Nosso sistema</option>
-					<option>Dúvidas internas</option>
-					<option>Trabalhe conosco</option>
-					<option>Outro</option>
-				</select>
-
-				<p>
-					<textarea id="textinfo" type="textarea" name="info" placeholder="Informações..."
-						style="width: 300px;height: 30px;margin:1%;margin-left:0%;"></textarea>
-				</p>
-			</div>
-
-			<div> <a href="#" class="button right">Enviar</a> </div>
-
-	</div>
-=======
 			<p>
-				<input type="email" name="email" placeholder="E-mail" 
+				<!-- Caso o navegador seja antigo e não possua suporte ao HTML5 ele valida o email com o JS
+				por isso o type email foi alterado para text-->
+				<input type="text" name="email" placeholder="E-mail" 
 					style="border-top:1;border-right:1;border-left:1;width:300px;height:30px">
 			</p>
 
@@ -112,10 +61,14 @@
 				<textarea id="textinfo" rows="10" cols="40" type="textarea" name="info" placeholder="Informações..."
 					style="resize:vertical;; margin:1%;margin-left:0.8%;"></textarea>
 			</div>
-			<div> <a href="#" class="button right">Enviar</a> </div>
+			<!--<div> <a href="#" class="button right">Enviar</a> </div> -->
+			<!--<button class = "button rigth" type="submit" name ="submit" value="Enviar" > -->
+			<input class="button" type="submit" name ="submit" value="Enviar" >
+
+			
 		</div>
 		
->>>>>>> 3607afe82cac430b2d90656731f93398e7170e68
+		<script type="text/javascript" src="js/contato.js"></script>
 
 	</form>
 	<br>
@@ -128,7 +81,7 @@
 			</ul>
 		</div>
 	</footer>
-	<script src="js/contato.js"></script>
+	
 </body>
 
 </html>
