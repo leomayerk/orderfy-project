@@ -1,4 +1,5 @@
 function validateForm() {
+    
     var nome = contactForm.nome.value;
     var sobrenome = contactForm.sobrenome.value;
     var email = contactForm.email.value;
