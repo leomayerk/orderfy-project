@@ -18,6 +18,11 @@ router.get('/', async (req, res) => {
     }
 })
 
+const createUser = (email, password) =>{
+        
+
+}
+
 router.post('/create', async (req, res) => {
     const { email, password } = req.body;
 
