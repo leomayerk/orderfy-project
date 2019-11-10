@@ -1,0 +1,45 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300,400|Pacifico";
+html{
+    color: #ffffff;
+}
+body{
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 13pt;
+    font-weight: 300;
+    line-height: 1.65;
+    background-color: #970d0da4;
+}
+
+nav{
+    font-family: "Pacifico", cursive;
+    font-size:22pt;
+    text-align: center;
+}
+
+#search{
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+}
+
+#view{
+    font-size: 50px;
+    background-color:#970d0ddd;
+}
+#done{
+    background-color: #00e676;
+}
+
+#filterdiv{
+    padding: 3em 0 2em 0;
+}
+#searchdiv{
+    padding: 8em 0 6em 0;
+}
+
+#drop-down-div{
+    height: 100px;
+}
+
+.card{
+    color: #970d0ddd;
+}

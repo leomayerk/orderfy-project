@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Orderfy</title>
+    <!-- Materialize CSS-->
+    <link rel="stylesheet" href="materialize/css/materialize.css">
+    <link rel="stylesheet" href="assets/css/search.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="js/search.js"> </script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper red darken-4 z-depth-2">Orderfy
+            <a href="#!" class="left hide-on-med-and-down">
+                <i class="material-icons ">menu</i>
+            </a>
+        </div>
+    </nav>
+    <div class=" row input-field"></div>
+
+    <!--Search Filters-->
+    <div class="row input-field red darken-4 z-depth-2 col s12">
+        <div id="searchdiv">
+            <nav>
+                <div class="nav-wrapper">
+                    <form>
+                        <div class="input-field red darken-4 z-depth-2">
+                            <input id="search" type="search"
+                                placeholder="Digite um produto, local ou empresa para localizar o que deseja..."
+                                required>
+                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+
+        <!--Button Filter-->
+        <div id="filterdiv" class=" row center">
+            <a href="#filters1" class="waves-effect waves-light btn modal-trigger">Filtrar<i
+                    class="material-icons right">filter_list</i></a>
+        </div>
+    </div>
+
+    <!-- ---BEGIN MODAL SORT--- -->
+    <div class=" row modal bottom-sheet red darken-4 col s12" id="sort1">
+        <div class="modal-content">
+
+            <!--Radio Buttons Type-->
+            <div id="radio" class="center input-field">
+                <form action="#">
+                    <p>
+                        <label class="input-field col s2">
+                            <input name="sort" type="radio" />
+                            <span>A -> Z</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label class="input-field col s2">
+                            <input name="sort" type="radio" />
+                            <span>Z -> A</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label class="input-field col s2">
+                            <input name="sort" type="radio" checked />
+                            <span>Mais próximo</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label class="input-field col s2">
+                            <input name="sort" type="radio" checked />
+                            <span>Maior preço</span>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label class="input-field col s2">
+                            <input name="sort" type="radio" />
+                            <span>Menor preço</span>
+                        </label>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal-footer red darken-4 col s12">
+            <a href="#!" id="done" class="modal-close waves-effect waves-green btn-flat"><i
+                    class="material-icons">done</i></a></a>
+        </div>
+    </div>
+    <!-- ---END MODAL SORT--- -->
+
+    <!-- ---BEGIN MODAL FILTER--- -->
+    <div class="row modal bottom-sheet red darken-4 col s12" id="filters1">
+        <div class="modal-content">
+
+            <!--Radio Buttons Type-->
+            <div id="radio" class=" center row input-field">
+                <form action="#">
+                    <p>
+                        <label class="input-field col s2">
+                            <input name="type" type="radio" />
+                            <span>Automóveis</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label class="input-field col s2">
+                            <input name="type" type="radio" />
+                            <span>Culinária e Alimentação</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label class="input-field col s2">
+                            <input name="type" type="radio" checked />
+                            <span>Ferramentas e Ramo Industrial</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label class="input-field col s2">
+                            <input name="type" type="radio" checked />
+                            <span>Produtos Domésticos</span>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label class="input-field col s2">
+                            <input name="type" type="radio" />
+                            <span>Produtos de Higiene e Limpeza</span>
+                        </label>
+                    </p>
+                </form>
+            </div>
+
+            <!--Select State and City-->
+            <div class="local">
+                <div class="input-field col s6">
+                    <select id="estado" onchange="buscaCidades(this.value)">
+                        <option value="" disabled selected>Selecione o Estado</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                    <label>Estado</label>
+                </div>
+                <div class="input-field col s6">
+                    <select id="cidade">
+                        <option value = cidade name = cidade></option>
+                    </select>
+                    <label>Cidade</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="center modal-footer red darken-4 col s12">
+            <a href="#!" id="done" class="modal-close waves-effect waves-green btn-flat"><i
+                    class="material-icons">done</i></a></a>
+        </div>
+    </div>
+    <!-- ---END MODAL FILTER--- -->
+
+    <div class="center" id="drop-down-div">
+        <a href="#cards" id="view" class="btn"><i id="view" class="large material-icons">expand_more</i></a>
+    </div>
+    <div class="row center">
+        <a href="#sort1" class="waves-effect waves-light btn modal-trigger">Ordenar<i
+                class="material-icons right">swap_vert</i></a>
+    </div>
+
+
+    <!--Company Cards-->
+    <div class="row col 12">
+        <span class="col s2 new badge" data-badge-caption="Negócios!">numero_de_negócios</span>
+    </div>
+    <div id="cards" class="row">
+        <div class="row col s12 m3">
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="images/x-do-jorge.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">X do Jorge<i
+                            class="material-icons right">more_vert</i></span>
+                    <p><a href="#">Visitar catálogo</a></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">X do Jorge<i
+                            class="material-icons right">close</i></span>
+                    <p>Aqui é pra colocar as informações e descrição da empresa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Product Cards-->
+    <div class="row col 12">
+        <span class="col s2 new badge" data-badge-caption="Produtos!">numero_de_produtos</span>
+    </div>
+    <div id="cards" class="row">
+        <div class="row col s12 m3">
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="images/churras.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Churrasqueira de controle remoto<i
+                            class="material-icons right">more_vert</i></span>
+                    <p><a href="#">Comprar</a></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Churrasqueira de controle remoto<i
+                            class="material-icons right">close</i></span>
+                    <p>Aqui é pra colocar as informações e descrição do produto.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Jquery-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Script-->
+    <script>
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
+</body>
+
+</html>
