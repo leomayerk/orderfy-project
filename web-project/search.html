@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="materialize/css/materialize.css">
     <link rel="stylesheet" href="assets/css/search.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="js/search.js"> </script>
+    <script src="js/search.js"></script>
 </head>
 
 <body>
@@ -251,6 +251,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!--Script-->
     <script>
+        if(!window.localStorage.getItem("_TOKEN_")){
+            window.location.href = "login.html";
+        }
+
         $(document).ready(function () {
             $('.modal').modal();
         });
@@ -258,6 +262,8 @@
             $('select').formSelect();
         });
     </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/api.js"></script>
 </body>
 
 </html>

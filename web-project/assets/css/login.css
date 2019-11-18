@@ -29,7 +29,7 @@ td.input_Login {
     background-color: #970d0ddd;;
 }
 
-input.loginButton {
+button.loginButton {
     background-color: #970d0ddd;
     border-radius: 4px;
     border: 0;

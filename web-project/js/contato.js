@@ -47,12 +47,3 @@ function validateForm() {
     }
 
 }
-
-var request = new XMLHttpRequest();
-request.open('GET', 'http://localhost:3000/Login', true)
-
-request.onload = function () {
-    alert("foi ?");
-}
-
-request.send()
