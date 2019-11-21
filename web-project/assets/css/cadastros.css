@@ -7,7 +7,7 @@ body{
     font-size: 13pt;
     font-weight: 300;
     line-height: 1.65;
-    background-color: #ffa1a1;
+    background-color:#970d0dc5;
 }
 
 nav{
@@ -41,9 +41,37 @@ nav{
 }
 
 .card{
-    color: #970d0ddd;
+    color: #970d0dc5;
 }
 
 div {
     
 }
+
+/* Footer */
+	#footer {
+		padding: 6em 0 4em 0;
+		background: #970d0dc5;
+		text-align: center;
+		color: #ffffff;
+	}
+
+	#footer a {
+		color: #ffffff;
+		text-decoration: none;
+	}
+
+	#footer ul li {
+		padding: 0 2em;
+	}
+
+	.icon::before{
+		font-size:22pt;
+		color: #25a2c3;
+		content: " | ";
+	}
+	.icon::after{
+		font-size:22pt;
+		color: #25a2c3;
+		content: " | ";
+	}

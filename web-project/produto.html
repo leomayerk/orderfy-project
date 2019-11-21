@@ -1,5 +1,7 @@
 <html>
 
+<meta charset="UTF-8">
+
 <head>
    <title>Cadastro de Produto</title>
    <meta name="viewport" content="width = device-width, initial-scale = 1">
@@ -11,7 +13,7 @@
    </script>
 </head>
 
-<body >
+<body>
    <nav>
       <div class="nav-wrapper red darken-4 z-depth-2">Orderfy
          <a href="#!" class="left hide-on-med-and-down">
@@ -19,60 +21,51 @@
          </a>
       </div>
    </nav>
-   <div class = "container red darken-4">
-   <div class="row">
+   
+   <div class="center input-field col s12">
+      <form>
+         <div class="row center">
 
-      <div class="input-field col s6">
-         
-         <input id="nfantasia" type="text" placeholder="Nome Fantasia" class="validate" required />
-      </div>
-   </div>
+            <div class="input-field col s6 ">
 
-   <div class="row">
-      <div class="input-field col s6">
-         <input placeholder="Nome do Produto" id="nomeproduto" type="text" class="validate">
-         
-      </div>
-   </div>
-
-   <div class="row">
-      <div class="input-field col s3">
-         <input placeholder="Preço" id="preco" type="text" class="validate">
-         
-      </div>
-   </div>
-
-
-   <div class="row">
-      <div class="input-field col s18">
-         <input placeholder="Descrição" id="descricaoproduto" type="text" class="validate">
-         
-      </div>
-   </div>
-
-   <div class="row">
-      <label>Fotos do Produto</label>
-      <div class="file-field input-field">
-         <div class="btn">
-            <span>Selecionar</span>
-            <input type="file" multiple />
+               <input id="nfantasia" type="text" placeholder="Nome Fantasia" class="validate" required />
+            </div>
          </div>
 
-         <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" placeholder="Selecione fotos do produto" />
+         <div class="row ">
+            <div class="input-field col s6">
+               <input placeholder="Nome do Produto" id="nomeproduto" type="text" class="validate">
+
+            </div>
          </div>
-      </div>
-   </div>
 
-   <div id="range"></div>
+         <div class="row ">
+            <div class="input-field col s3">
+               <input placeholder="Preço" id="preco" type="text" class="validate">
+
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="input-field col s18">
+               <input placeholder="Descrição" id="descricaoproduto" type="text" class="validate">
+
+            </div>
+         </div>
+
+         <div class="row">
+            <label>Selecione fotos para anexar.</label>
+            <div class="file-field input-field">
+               <div class="btn">
+                  <span>Selecionar</span>
+                  <input type="file" multiple />
+               </div>
 
 
-
+            </div>
+         </div>
+      </form>
    </div>
-   </div>
-   </form>
-   </div>
-</div>
 </body>
 
 </html>

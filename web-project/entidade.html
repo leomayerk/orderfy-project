@@ -14,7 +14,7 @@
    </script>
 </head>
 
-<body class="container">
+<body>
    <nav>
       <div class="nav-wrapper red darken-4 z-depth-2">Orderfy
          <a href="#!" class="left hide-on-med-and-down">
@@ -23,138 +23,151 @@
       </div>
    </nav>
    <div class=" row input-field"></div>
-   
+
    <div class="row">
       <form class="col s12">
-         <div class="row">
-            <div class="input-field col s12">
+         <div class="row container">
+            <div class="input-field">
                <input placeholder="Razão Social" id="rsocial" type="text" class="active validate" required />
-               <label for="rsocial">Razão Social</label>
-            </div>
-
-            <div class="input-field col s12">
-               <label for="nfantasia">Nome Fantasia</label>
-               <input id="nfantasia" type="text" placeholder="Nome Fantasia" class="validate" required />
-
-            </div>
-         </div>
-
-         <div class="row">
-            <div class="input-field col s8">
-               <input placeholder="CPF/CNPJ" id="cpfcnpj" type="text" class="validate">
-               <label for="cpfcnpj">CPF/CNPJ</label>
-            </div>
-         </div>
-
-         <div class="row">
-
-            <div class="input-field col s12">
-
-               <select>
-
-                  <option value="" disabled selected>Selecione o seu Estado</option>
-
-                  <option value="AC">Acre</option>
-
-                  <option value="AL">Alagoas</option>
-
-                  <option value="AP">Amapá</option>
-
-                  <option value="AM">Amazonas</option>
-
-                  <option value="BA">Bahia</option>
-
-                  <option value="CE">Ceará</option>
-
-                  <option value="DF">Distrito Federal</option>
-
-                  <option value="ES">Espíritio Santo</option>
-
-                  <option value="GO">Goiânia</option>
-
-                  <option value="MA">Maranhão</option>
-
-                  <option value="MT">Mato Grosso</option>
-
-                  <option value="MS">Mato Grosso do Sul</option>
-
-                  <option value="MG">Minas Gerais</option>
-
-                  <option value="PA">Pará</option>
-
-                  <option value="PB">Paraíba</option>
-
-                  <option value="PR">Paraná</option>
-
-                  <option value="PE">Pernambuco</option>
-
-                  <option value="PI">Piauí</option>
-
-                  <option value="RJ">Rio de Janeiro</option>
-
-                  <option value="RN">Rio Grande do Norte</option>
-
-                  <option value="RS">Rio Grande do Sul</option>
-
-                  <option value="RO">Rondônia</option>
-
-                  <option value="RR">Roraima</option>
-
-                  <option value="SC">Santa Catarina</option>
-
-                  <option value="SP">São Paulo</option>
-
-                  <option value="SE">Sergipe</option>
-
-                  <option value="TO">Tocantins</option>
-
-               </select>
-
-               <label>UF</label>
 
             </div>
 
-         </div>
+            <div class="input-field col s7">
+               <div class="row">
 
+                  <input id="nfantasia" type="text" placeholder="Nome Fantasia" class="validate" required />
 
-         <div class="row">
-            <div class="input-field col s8">
-               <input placeholder="Cidade" id="cidade" type="text" class="validate">
-               <label for="cidade">Cidade</label>
+               </div>
             </div>
-         </div>
 
-         <div class="row">
-            <div class="input-field col s12">
-               <p>
-                  <input id="calimentacao" type="radio" name="ramo" value="calimentacao" checked />
-                  <label for="calimentacao">Culinária e Alimentação </label>
-               </p>
+            <div class="row">
+               <div class="input-field col s6">
+                  <input placeholder="CPF/CNPJ" id="cpfcnpj" type="number" class="validate">
 
-               <p>
-                  <input id="phlimpeza" type="radio" name="ramo" value="phlimpeza" />
-                  <label for="phlimpeza">Produtos de Higiene e Limpeza </label>
-               </p>
+               </div>
+            </div>
 
-               <p>
-                  <input id="veiculos" type="radio" name="ramo" value="veiculos" />
-                  <label for="veiculos">Veículos </label>
-               </p>
+            <div class="row">
 
-               <p>
-                  <input id="frindustrial" type="radio" name="ramo" value="frindustrial" />
-                  <label for="frindustrial">Ferramentas e Ramo Industrial </label>
-               </p>
+               <div class="input-field col s4">
 
-               <p>
-                  <input id="pdomestico" type="radio" name="ramo" value="pdomestico" />
-                  <label for="pdomestico">Produtos Domésticos</label>
-               </p>
+                  <select>
+
+                     <option value="" disabled selected>Selecione o seu Estado</option>
+
+                     <option value="AC">Acre</option>
+
+                     <option value="AL">Alagoas</option>
+
+                     <option value="AP">Amapá</option>
+
+                     <option value="AM">Amazonas</option>
+
+                     <option value="BA">Bahia</option>
+
+                     <option value="CE">Ceará</option>
+
+                     <option value="DF">Distrito Federal</option>
+
+                     <option value="ES">Espíritio Santo</option>
+
+                     <option value="GO">Goiânia</option>
+
+                     <option value="MA">Maranhão</option>
+
+                     <option value="MT">Mato Grosso</option>
+
+                     <option value="MS">Mato Grosso do Sul</option>
+
+                     <option value="MG">Minas Gerais</option>
+
+                     <option value="PA">Pará</option>
+
+                     <option value="PB">Paraíba</option>
+
+                     <option value="PR">Paraná</option>
+
+                     <option value="PE">Pernambuco</option>
+
+                     <option value="PI">Piauí</option>
+
+                     <option value="RJ">Rio de Janeiro</option>
+
+                     <option value="RN">Rio Grande do Norte</option>
+
+                     <option value="RS">Rio Grande do Sul</option>
+
+                     <option value="RO">Rondônia</option>
+
+                     <option value="RR">Roraima</option>
+
+                     <option value="SC">Santa Catarina</option>
+
+                     <option value="SP">São Paulo</option>
+
+                     <option value="SE">Sergipe</option>
+
+                     <option value="TO">Tocantins</option>
+
+                  </select>
+
+                  
+
+               </div>
 
             </div>
-         </div>
+
+
+            <div class="row">
+               <div class="input-field col s4">
+                  <input placeholder="Cidade" id="cidade" type="text" class="validate">
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="input-field col s12">
+                  <p>
+                     <input id="calimentacao" type="radio" name="ramo" value="calimentacao" checked />
+                     <label for="calimentacao">Culinária e Alimentação </label>
+                  </p>
+
+                  <p>
+                     <input id="phlimpeza" type="radio" name="ramo" value="phlimpeza" />
+                     <label for="phlimpeza">Produtos de Higiene e Limpeza </label>
+                  </p>
+
+                  <p>
+                     <input id="veiculos" type="radio" name="ramo" value="veiculos" />
+                     <label for="veiculos">Veículos </label>
+                  </p>
+
+                  <p>
+                     <input id="frindustrial" type="radio" name="ramo" value="frindustrial" />
+                     <label for="frindustrial">Ferramentas e Ramo Industrial </label>
+                  </p>
+
+                  <p>
+                     <input id="pdomestico" type="radio" name="ramo" value="pdomestico" />
+                     <label for="pdomestico">Produtos Domésticos</label>
+                  </p>
+
+               </div>
+            </div>
       </form>
    </div>
+
+
+   <!--
+      Rodapé verificar ENRICO
+      <footer id="footer">
+			<div class="inner">
+				<ul class="actions">
+					<li class="icon">
+						<a href="home.html" class="button contact">Entre em contato!</a>
+					</li>
+				</ul>
+			</div>
+		</footer> -->
 
    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    <!-- Compiled and minified JavaScript -->
