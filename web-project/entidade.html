@@ -25,11 +25,14 @@
    <div class=" row input-field"></div>
 
    <div class="row">
-      <form class="col s12">
-         <div class="row container">
-            <div class="input-field">
-               <input placeholder="Razão Social" id="rsocial" type="text" class="active validate" required />
+      <form class="col s9 push-s3">
 
+         <div class="row container">
+
+            <div class="input-field col s7">
+               <div class="row">
+                  <input placeholder="Razão Social" id="rsocial" type="text" class="active validate" required />
+               </div>
             </div>
 
             <div class="input-field col s7">
@@ -40,18 +43,20 @@
                </div>
             </div>
 
-            <div class="row">
-               <div class="input-field col s6">
+            <div class="input-field col s7">
+               <div class="row">
+
                   <input placeholder="CPF/CNPJ" id="cpfcnpj" type="number" class="validate">
 
                </div>
             </div>
 
-            <div class="row">
 
-               <div class="input-field col s4">
 
-                  <select>
+            <div class="input-field col s7">
+               <div class="row">
+
+                  <select class="browser-default">
 
                      <option value="" disabled selected>Selecione o seu Estado</option>
 
@@ -111,63 +116,56 @@
 
                   </select>
 
-                  
+
 
                </div>
 
             </div>
 
+            <div class="input-field col s7">
+               <div class="row">
 
-            <div class="row">
-               <div class="input-field col s4">
                   <input placeholder="Cidade" id="cidade" type="text" class="validate">
                </div>
             </div>
 
             <div class="row">
+
                <div class="input-field col s12">
+                  <h8>Selecione o tipo de estabelecimento</h8>
                   <p>
-                     <input id="calimentacao" type="radio" name="ramo" value="calimentacao" checked />
+                     <input class="with gap" id="calimentacao" type="radio" name="ramo" value="calimentacao" />
                      <label for="calimentacao">Culinária e Alimentação </label>
                   </p>
 
                   <p>
-                     <input id="phlimpeza" type="radio" name="ramo" value="phlimpeza" />
+                     <input class="with gap" id="phlimpeza" type="radio" name="ramo" value="phlimpeza" />
                      <label for="phlimpeza">Produtos de Higiene e Limpeza </label>
                   </p>
 
                   <p>
-                     <input id="veiculos" type="radio" name="ramo" value="veiculos" />
+                     <input class="with gap" id="veiculos" type="radio" name="ramo" value="veiculos" />
                      <label for="veiculos">Veículos </label>
                   </p>
 
                   <p>
-                     <input id="frindustrial" type="radio" name="ramo" value="frindustrial" />
+                     <input class="with gap" id="frindustrial" type="radio" name="ramo" value="frindustrial" />
                      <label for="frindustrial">Ferramentas e Ramo Industrial </label>
                   </p>
 
                   <p>
-                     <input id="pdomestico" type="radio" name="ramo" value="pdomestico" />
+                     <input class="with gap" id="pdomestico" type="radio" name="ramo" value="pdomestico" />
                      <label for="pdomestico">Produtos Domésticos</label>
                   </p>
 
                </div>
             </div>
+
       </form>
    </div>
 
 
-   <!--
-      Rodapé verificar ENRICO
-      <footer id="footer">
-			<div class="inner">
-				<ul class="actions">
-					<li class="icon">
-						<a href="home.html" class="button contact">Entre em contato!</a>
-					</li>
-				</ul>
-			</div>
-		</footer> -->
+
 
    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    <!-- Compiled and minified JavaScript -->
@@ -181,6 +179,9 @@
          });
       })(jQuery); // end of jQuery name space
    </script>
+
 </body>
+
+
 
 </html>
