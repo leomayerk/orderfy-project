@@ -10,11 +10,95 @@ body{
     background-color:#970d0dc5;
 }
 
+input[type=text],input[type=number] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+
+}
+
+input[type=password],input[type=number] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+
+}
+
+input[type=email],input[type=number] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+
+}
+
+
+select {
+	width: 100%;
+	padding: 10px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background-color: transparent;;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 13pt;
+    font-weight: 300;
+	line-height: 1.65;
+	color: white;
+}
+
+
 nav{
     font-family: "Pacifico", cursive;
     font-size:22pt;
     text-align: center;
 }
+
+::placeholder{
+
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    font-weight: 300;
+	line-height: 1.65;
+	color: #ffffff;
+}
+
+.input-field label{
+
+	color: white
+}
+
+[type="radio"]:checked+label:after {
+    border-radius: 50%;
+    border: 2px solid yellow;
+    background-color: yellow;
+    z-index: 0;
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    transform: scale(1.02);
+}
+
+
+[type="radio"]:not(:checked)+label:after {
+    border-radius: 50%;
+    border: 2px solid black;
+    z-index: -1;
+    transform: scale(0);
 
 #search{
     font-family: "Montserrat", sans-serif;
@@ -44,9 +128,6 @@ nav{
     color: #970d0dc5;
 }
 
-div {
-    
-}
 
 /* Footer */
 	#footer {
