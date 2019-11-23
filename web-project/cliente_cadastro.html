@@ -28,13 +28,13 @@
             <div class="row">
                <div class="input-field col s7">
                   <input placeholder="Nome completo" id="name" type="text" class="active validate" required />
-                  
+
                </div>
             </div>
 
             <div class="row">
                <div class="input-field col s7">
-                  
+
                   <input id="password" type="password" placeholder="Senha" class="validate" required />
                </div>
             </div>
@@ -42,13 +42,44 @@
             <div class="row">
                <div class="input-field col s7">
                   <input placeholder="Email" id="email" type="email" class="validate">
-                  
+
                </div>
             </div>
 
+            <div class="row"></div>
+         
+            <div id="filterdiv" class="row col s9 push-s2">
+               <button type="submit" name="login_login" id="login_login"
+                  class="btn waves-effect waves-light">Salvar</button>
+            </div>
+
+
          </div>
+         
       </form>
    </div>
+
+
+   <script>
+      $("form").on("submit", async function (event) {
+         event.preventDefault();
+         const data = {}
+         $(this).serializeArray().forEach((item) => {
+            data[item.name] = item.value
+            console.log(data);
+         });
+         try {
+            const result = await api.post('/business/create', data)
+            window.location.href = "search.html"
+         } catch (error) {
+            alert(error);
+         }
+
+      });
+   </script>
+
+
+
 </body>
 
 </html>
