@@ -15,4 +15,8 @@ const BusinessSchema = new Schema({
   ramo: { type: String, required: true }
 });
 
+BusinessSchema.pre('save', function (next) {
+    return next();
+});
+
 module.exports = mongoose.model("Business", BusinessSchema);

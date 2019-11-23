@@ -194,8 +194,9 @@
             data[item.name] = item.value
          });
          try {
+            console.log(data)
             const result = await api.post('/business/create', data)
-            window.location.href = "search.html"
+            console.log(result)
          } catch (error) {
             alert(error);
          }

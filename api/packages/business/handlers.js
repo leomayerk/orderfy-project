@@ -16,13 +16,14 @@ handlers.create = async (req, res) => {
   const { razaoSocial, nomeFantasia, cnpjCpf, estado, cidade, ramo } = req.body;
 
   if (!razaoSocial || !nomeFantasia || !cnpjCpf || !estado || !cidade ||!ramo)
-    return res.send({ error: "dados insuficientes" });
+    return res.send({ error: "dados insuficientes pra criar empresa" });
 
   try {
     if (await Business.findOne({ cnpjCpf }))
       return res.status(400).send({ error: "Empresa já registrada" });
 
     const business = await Business.create(req.body);
+    return res.status(200).send({ business });
   } catch (err) {
     if (err) return res.status(500).send({ error: "Erro ao Buscar Empresa" });
   }
