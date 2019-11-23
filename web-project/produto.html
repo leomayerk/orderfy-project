@@ -31,27 +31,27 @@
 
                <div class="input-field col s7 ">
 
-                  <input id="nfantasia" type="text" placeholder="Nome Fantasia" class="validate" required />
+                  <input name="nfantasia" type="text" placeholder="Nome Fantasia" class="validate" required />
                </div>
             </div>
 
             <div class="row ">
                <div class="input-field col s7">
-                  <input placeholder="Nome do Produto" id="nomeproduto" type="text" class="validate">
+                  <input placeholder="Nome do Produto" name="nomeproduto" type="text" class="validate">
 
                </div>
             </div>
 
             <div class="row ">
                <div class="input-field col s7">
-                  <input placeholder="Preço" id="preco" type="number" class="validate">
+                  <input placeholder="Preço" name="preco" type="text" class="validate">
 
                </div>
             </div>
 
             <div class="row">
                <div class="input-field col s7">
-                  <input placeholder="Descrição" id="descricaoproduto" type="text" class="validate">
+                  <input placeholder="Descrição" name="descricaoproduto" type="text" class="validate">
 
                </div>
             </div>
@@ -69,9 +69,39 @@
                </div>
             </div>
 
+            <div class="row"></div>
+            <div id="filterdiv" class="row col s9 push-s2">
+               <button type="submit" name="login_login" id="login_login"
+                  class="btn waves-effect waves-light">Salvar</button>
+            </div>
+
+
          </div>
+         
       </form>
    </div>
+
+
+
+   <script>
+      $("form").on("submit", async function (event) {
+         event.preventDefault();
+         const data = {}
+         $(this).serializeArray().forEach((item) => {
+            data[item.name] = item.value
+            console.log(data);
+         });
+         try {
+            const result = await api.post('/business/create', data)
+            window.location.href = "search.html"
+         } catch (error) {
+            alert(error);
+         }
+
+      });
+   </script>
+
+
 
 </body>
 
