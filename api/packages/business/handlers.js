@@ -13,13 +13,13 @@ handlers.list = async (req, res) => {
   
 
 handlers.create = async (req, res) => {
-  const { razaoSocial, nomeFantasia, cnpj, estado, cidade } = req.body;
+  const { razaoSocial, nomeFantasia, cnpjCpf, estado, cidade, ramo } = req.body;
 
-  if (!razaoSocial || !nomeFantasia || !cnpj || !estado || !cidade)
+  if (!razaoSocial || !nomeFantasia || !cnpjCpf || !estado || !cidade ||!ramo)
     return res.send({ error: "dados insuficientes" });
 
   try {
-    if (await Business.findOne({ cnpj }))
+    if (await Business.findOne({ cnpjCpf }))
       return res.status(400).send({ error: "Empresa já registrada" });
 
     const business = await Business.create(req.body);
@@ -29,14 +29,14 @@ handlers.create = async (req, res) => {
 };
 
 handlers.update = async (req, res) => {
-  const { razaoSocial, nomeFantasia, cnpj, estado, cidade } = req.body;
+  const { razaoSocial, nomeFantasia, cnpjCpf, estado, cidade, ramo } = req.body;
 
-  if (!razaoSocial || !nomeFantasia || !cnpj || !estado || !cidade) {
+  if (!razaoSocial || !nomeFantasia || !cnpjCpf || !estado || !cidade ||!ramo) {
     return res.send({ error: "dados insuficientes para a atualização" });
   }
 
   try {
-    const business = await Business.findOne({ cnpj });
+    const business = await Business.findOne({ cnpjCpf });
 
     if (!business) {
       return res
