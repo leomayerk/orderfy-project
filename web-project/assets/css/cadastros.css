@@ -43,6 +43,23 @@ input[type=email],input[type=number] {
 
 }
 
+.saveButton {
+    background-color: #970d0ddd;
+    border-radius: 4px;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    height: 3.5em;
+    line-height: 3.5em;
+    padding: 0 3.5em;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0.75;
+	margin: 8px 0;
+	position: absolute;
+}
 
 select {
 	width: 100%;

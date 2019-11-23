@@ -31,23 +31,21 @@
 
             <div class="input-field col s7">
                <div class="row">
-                  <input placeholder="Razão Social" id="rsocial" type="text" class="active validate" required />
+                  <input placeholder="Razão Social" id="rsocial" name="rsocial" type="text" class="active validate" required />
                </div>
             </div>
 
             <div class="input-field col s7">
                <div class="row">
 
-                  <input id="nfantasia" type="text" placeholder="Nome Fantasia" class="validate" required />
+                  <input id="nfantasia" type="text" name="nfantasia" placeholder="Nome Fantasia" class="validate" required />
 
                </div>
             </div>
 
             <div class="input-field col s7">
                <div class="row">
-
-                  <input placeholder="CPF/CNPJ" id="cpfcnpj" type="number" class="validate">
-
+                  <input placeholder="CPF/CNPJ" id="cpfcnpj" name="cpfcnpj" type="text" class="validate" required />
                </div>
             </div>
 
@@ -56,7 +54,7 @@
             <div class="input-field col s7">
                <div class="row">
 
-                  <select class="browser-default">
+                  <select name="estado" class="browser-default" required>
 
                      <option value="" disabled selected>Selecione o seu Estado</option>
 
@@ -125,14 +123,14 @@
             <div class="input-field col s7">
                <div class="row">
 
-                  <input placeholder="Cidade" id="cidade" type="text" class="validate">
+                  <input placeholder="Cidade" id="cidade" name="cidade" type="text" class="validate">
                </div>
             </div>
 
             <div class="row">
 
                <div class="input-field col s12">
-                  <h8>Selecione o tipo de estabelecimento</h8>
+                  <h7>Selecione o tipo de estabelecimento</h7>
                   <p>
                      <input class="with gap" id="calimentacao" type="radio" name="ramo" value="calimentacao" />
                      <label for="calimentacao">Culinária e Alimentação </label>
@@ -157,8 +155,12 @@
                      <input class="with gap" id="pdomestico" type="radio" name="ramo" value="pdomestico" />
                      <label for="pdomestico">Produtos Domésticos</label>
                   </p>
-
+                  
+                 
                </div>
+            </div>
+            <div id="filterdiv" class=" row center">
+               <button type="submit" name="login_login" id="login_login" class="btn waves-effect waves-light">Salvar</button>
             </div>
 
       </form>
@@ -170,6 +172,8 @@
    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    <!-- Compiled and minified JavaScript -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/js/materialize.min.js"></script>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="js/api.js"></script>
 
    <script>
       (function ($) {
@@ -178,6 +182,23 @@
             $('select').not('.disabled').formSelect();
          });
       })(jQuery); // end of jQuery name space
+   </script>
+   <script>
+      $("form").on("submit", async function (event) {
+         event.preventDefault();
+         const data = {}
+         $(this).serializeArray().forEach((item) => {
+            data[item.name] = item.value
+            console.log(data);
+         });
+         try {
+            const result = await api.post('/business/create', data)
+            window.location.href = "search.html"
+         } catch (error) {
+            alert(error);
+         }
+
+      });
    </script>
 
 </body>
