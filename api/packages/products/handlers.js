@@ -5,10 +5,18 @@ const handlers = {};
 
 handlers.list = async (req, res) => {
     try {
-      const products = await Products.find({});
+      const filters = {};
+
+      if(req.query.search) {
+        filters.$or = [
+          { nome: new RegExp(req.query.search, "gi") },
+          { descricao: new RegExp(req.query.search, "gi") },
+        ];
+      }
+      const products = await Products.find(filters);
       return res.status(200).send(products);
     } catch (err) {
-      return res.status(500).send({ error: "Erro ao buscar o usuário" });
+      return res.status(500).send({ error: "Erro ao buscar produtos" });
     }
   };
   
@@ -18,13 +26,15 @@ handlers.create = async (req, res) => {
 
   const business =  await Business.findOne({idUser: req.credentials._id})
 
-  req.body.idBusiness = business.id;    
+  req.body.file = req.file.filename;
+
+  req.body.idBusiness = business.id;
 
   if (!nome || !preco || !descricao) {
     return res.send({ error: "dados insuficientes pra criar produto" });
   }
 
-  console.log(req.body.idBusiness)
+  
   
   try {
     const product = await Products.create(req.body);

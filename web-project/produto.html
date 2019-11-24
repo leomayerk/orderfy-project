@@ -58,8 +58,8 @@
                <div class="file-field input-field">
 
                   <label class="btn">
-                     <span>Anexos</span>
-                     <input type="file" multiple />
+                     <span>Anexo</span>
+                     <input name="anexo" type="file"/>
                   </label>
 
 
@@ -87,13 +87,19 @@
    <script>
       $("form").on("submit", async function (event) {
          event.preventDefault();
-         const data = {}
+         const data = new FormData();
+         data.append("anexo", document.querySelector("[name='anexo']").files[0])
+         
+
          $(this).serializeArray().forEach((item) => {
-            data[item.name] = item.value
-            console.log(data);
+            data.append(item.name, item.value);
          });
          try {
-            const result = await api.post('/products', data)
+            const result = await api.post('/products', data, {
+               headers: {
+                  'content-type': 'multipart/form-data'
+               }
+            })
          } catch (error) {
             alert(error);
          }

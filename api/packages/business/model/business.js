@@ -20,4 +20,6 @@ BusinessSchema.pre("save", function(next) {
   return next();
 });
 
+BusinessSchema.index({nomeFantasia: 'text', 'razaoSocial': 'text', 'cidade': 'text'});
+
 module.exports = mongoose.model("Business", BusinessSchema);

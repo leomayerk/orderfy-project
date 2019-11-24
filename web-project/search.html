@@ -28,15 +28,13 @@
         <div id="searchdiv">
             <nav>
                 <div class="nav-wrapper">
-                    <form>
                         <div class="input-field red darken-4 z-depth-2">
                             <input id="search" type="search"
-                                placeholder="Digite um produto, local ou empresa para localizar o que deseja..."
+                                placeholder="Digite um produto, cidade ou empresa para localizar o que deseja..."
                                 required>
                             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                             <i class="material-icons">close</i>
                         </div>
-                    </form>
                 </div>
             </nav>
         </div>
@@ -199,57 +197,23 @@
     </div>
 
 
-    <!--Company Cards-->
     <div class="row col 12">
-        <span class="col s2 new badge" data-badge-caption="Negócios!">numero_de_negócios</span>
     </div>
-    <div id="cards" class="row">
-        <div class="row col s12 m3">
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="images/x-do-jorge.jpg">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">X do Jorge<i
-                            class="material-icons right">more_vert</i></span>
-                    <p><a href="#">Visitar catálogo</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">X do Jorge<i
-                            class="material-icons right">close</i></span>
-                    <p>Aqui é pra colocar as informações e descrição da empresa.</p>
-                </div>
-            </div>
-        </div>
+    <div id="cardsProducts" class="row">
     </div>
+    <!--Company Cards-->
+
     <!--Product Cards-->
     <div class="row col 12">
-        <span class="col s2 new badge" data-badge-caption="Produtos!">numero_de_produtos</span>
+
     </div>
-    <div id="cards" class="row">
-        <div class="row col s12 m3">
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="images/churras.jpg">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Churrasqueira de controle remoto<i
-                            class="material-icons right">more_vert</i></span>
-                    <p><a href="#">Comprar</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Churrasqueira de controle remoto<i
-                            class="material-icons right">close</i></span>
-                    <p>Aqui é pra colocar as informações e descrição do produto.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="cardsBusiness" class="row"></div>
 
     <!--Jquery-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <!--Script-->
     <script>
         if (!window.localStorage.getItem("_TOKEN_")) {
@@ -258,18 +222,90 @@
 
         $(document).ready(function () {
             $('.modal').modal();
-        });
-        $(document).ready(function () {
             $('select').formSelect();
         });
     </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/api.js"></script>
     <script>
-        $(document).ready(function() {
-            axios.get('/')
-            console.log("pao");
-        })
+        function listarProdutos(search) {
+            api.get('/products',{
+                params:{
+                    search
+                }
+            }).then((res) => {
+                const products = res.data.map((p) => `
+                    <div class="row col s12 m3">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="http://localhost:3000/${p.file}">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4">${p.nome}<i
+                                        class="material-icons right">more_vert</i></span>
+                                <p><a href="#">Comprar</a></p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">${p.nome}<i
+                                        class="material-icons right">close</i></span>
+                                <p>${p.descricao}</p>
+                            </div>
+                        </div>
+                    </div>
+                    `
+                );
+                document.getElementById("cardsProducts").innerHTML = products.join('\n')
+            });
+        }
+
+        function  listarEmpresas(search){
+            api.get('/business',{
+                params:{
+                    search
+                }
+            }).then((res) => {
+                const business = res.data.map((b) => `
+                    <div class="row col s12 m3">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <img class="activator" src="images/churras.jpg">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4">%${b.nomeFantasia}<i
+                                    class="material-icons right">more_vert</i></span>
+                                <p><a href="#">Visitar Catalogo</a></p>
+                            </div>
+                            <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">${b.ramo}<i
+                                    class="material-icons right">close</i></span>
+                            <p>Aqui é pra colocar as informações e descrição do produto.</p>
+                            </div>
+                        </div>
+                    </div>
+                    `
+                );
+                document.getElementById("cardsBusiness").innerHTML = business.join('\n')
+            });
+        }
+
+        function debounce(fn, delay) {
+            let count = null;
+            return (...args) => {
+                window.clearTimeout(count);
+                count = window.setTimeout(() => {
+                    fn(...args);
+                }, delay);
+            }
+        }
+
+        $(document).ready(() => {
+            listarProdutos();
+            listarEmpresas();
+            const listarProdutosDeb = debounce(listarProdutos, 500);
+            $("#search").on("input", function() {
+                listarProdutosDeb(this.value);
+            })
+        });
     </script>
 </body>
 

@@ -4,13 +4,18 @@ const handlers = {};
 
 handlers.list = async (req, res) => {
     try {
-      const business = await business.findOne({});
+      const filters = {};
+      if(req.body.search) {
+        filters.$text =  {$search: req.body.search}
+      }
+      const business = await Business.find(filters)
       return res.status(200).send(business);
     } catch (err) {
-      return res.status(500).send({ error: "Erro ao buscar o usuário" });
+      console.log(err)
+      return res.status(500).send({ error: "Erro ao buscar empresa" });
     }
   };
-  
+
 
 handlers.create = async (req, res) => {
   const { razaoSocial, nomeFantasia, cnpjCpf, estado, cidade, ramo } = req.body;
@@ -20,7 +25,7 @@ handlers.create = async (req, res) => {
   }
   
   req.body.idUser = req.credentials._id;
-  
+
   try {
     if (await Business.findOne({ cnpjCpf })) {
       return res.status(400).send({ error: "Empresa já registrada" });

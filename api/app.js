@@ -36,6 +36,7 @@ mongoose.connection.on("connected", () => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use(express.static('files'));
 app.use("/api/users/", usersRoute);
 app.use("/api/business/", businessRoute);
 app.use("/api/products/", productsRoute);
