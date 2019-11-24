@@ -6,6 +6,8 @@ const config = require("./config/config");
 const indexRoute = require("./packages/index");
 const usersRoute = require("./packages/users/routes");
 const businessRoute = require("./packages/business/routes");
+const productsRoute = require("./packages/products/routes");
+
 
 const url = config.bd_string;
 const options = {
@@ -36,6 +38,7 @@ app.use(bodyParser.json());
 
 app.use("/api/users/", usersRoute);
 app.use("/api/business/", businessRoute);
+app.use("/api/products/", productsRoute);
 
 app.all("/", (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");

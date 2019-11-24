@@ -176,7 +176,7 @@
                 </div>
                 <div class="input-field col s6">
                     <select id="cidade">
-                        <option value = cidade name = cidade></option>
+                        <option value=cidade name=cidade></option>
                     </select>
                     <label>Cidade</label>
                 </div>
@@ -252,7 +252,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!--Script-->
     <script>
-        if(!window.localStorage.getItem("_TOKEN_")){
+        if (!window.localStorage.getItem("_TOKEN_")) {
             window.location.href = "login.html";
         }
 
@@ -265,6 +265,12 @@
     </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/api.js"></script>
+    <script>
+        $(document).ready(function() {
+            axios.get('/')
+            console.log("pao");
+        })
+    </script>
 </body>
 
 </html>

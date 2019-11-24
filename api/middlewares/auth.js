@@ -1,7 +1,8 @@
 const jwt = require('jsonwebtoken');
 const config = require('../config/config');
+const Users = require ('../../api/packages/users/model/user');
 
-const auth = (req, res, next) => {
+const auth =  (req, res, next) => {
     const token_header = req.headers.authorization;
 
     if (!token_header){
@@ -12,7 +13,16 @@ const auth = (req, res, next) => {
         if (err) { 
             return res.status(401).send({ error: 'sem autorizacao' });
         }
-        return next();
+  
+        Users.findById(decoded.id, (err, user)=> {
+            if (err) { 
+                return res.status(401).send({ error: 'ero au encontrá user ' });
+            }
+
+            req.credentials = user;
+            return next();
+        });
+        
     });
 }
 

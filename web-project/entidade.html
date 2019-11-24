@@ -31,14 +31,16 @@
 
             <div class="input-field col s7">
                <div class="row">
-                  <input placeholder="Razão Social" id="rsocial" name="razaoSocial" type="text" class="active validate" required />
+                  <input placeholder="Razão Social" id="rsocial" name="razaoSocial" type="text" class="active validate"
+                     required />
                </div>
             </div>
 
             <div class="input-field col s7">
                <div class="row">
 
-                  <input id="nfantasia" type="text" name="nomeFantasia" placeholder="Nome Fantasia" class="validate" required />
+                  <input id="nfantasia" type="text" name="nomeFantasia" placeholder="Nome Fantasia" class="validate"
+                     required />
 
                </div>
             </div>
@@ -194,9 +196,8 @@
             data[item.name] = item.value
          });
          try {
-            console.log(data)
-            const result = await api.post('/business/create', data)
-            console.log(result)
+            const result = await api.post('/business', data)
+            window.location.href = "search.html"
          } catch (error) {
             alert(error);
          }

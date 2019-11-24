@@ -1,82 +1,81 @@
 <html>
 
 <head>
-   <title>Cliente</title>
-   <meta name="viewport" content="width = device-width, initial-scale = 1">
-   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-   <link rel="stylesheet" href="assets/css/cadastros.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
-   </script>
+  <title>Cliente</title>
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link rel="stylesheet" href="assets/css/cadastros.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+  </script>
 </head>
 
 <body>
 
-   <nav>
-      <div class="nav-wrapper red darken-4 z-depth-2">Orderfy
-         <a href="#!" class="left hide-on-med-and-down">
-            <i class="material-icons ">menu</i>
-         </a>
+  <nav>
+    <div class="nav-wrapper red darken-4 z-depth-2">Orderfy
+      <a href="#!" class="left hide-on-med-and-down">
+        <i class="material-icons ">menu</i>
+      </a>
+    </div>
+  </nav>
+
+  <div class="row">
+    <form class="col s9 push-s3">
+      <div class="container">
+        <div class="row"></div>
+        <div class="row">
+          <div class="input-field col s7">
+            <input placeholder="Nome completo" id="name" type="text" class="active validate" required />
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s7">
+
+            <input id="password" type="password" placeholder="Senha" class="validate" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s7">
+            <input placeholder="Email" id="email" type="email" class="validate">
+
+          </div>
+        </div>
+
+        <div class="row"></div>
+
+        <div id="filterdiv" class="row col s9 push-s2">
+          <button type="submit" name="login_login" id="login_login" class="btn waves-effect waves-light">Salvar</button>
+        </div>
+
+
       </div>
-   </nav>
 
-   <div class="row">
-      <form class="col s9 push-s3">
-         <div class="container">
-            <div class="row"></div>
-            <div class="row">
-               <div class="input-field col s7">
-                  <input placeholder="Nome completo" id="name" type="text" class="active validate" required />
-
-               </div>
-            </div>
-
-            <div class="row">
-               <div class="input-field col s7">
-
-                  <input id="password" type="password" placeholder="Senha" class="validate" required />
-               </div>
-            </div>
-
-            <div class="row">
-               <div class="input-field col s7">
-                  <input placeholder="Email" id="email" type="email" class="validate">
-
-               </div>
-            </div>
-
-            <div class="row"></div>
-         
-            <div id="filterdiv" class="row col s9 push-s2">
-               <button type="submit" name="login_login" id="login_login"
-                  class="btn waves-effect waves-light">Salvar</button>
-            </div>
+    </form>
+  </div>
 
 
-         </div>
-         
-      </form>
-   </div>
-
-
-   <script>
-      $("form").on("submit", async function (event) {
-         event.preventDefault();
-         const data = {}
-         $(this).serializeArray().forEach((item) => {
-            data[item.name] = item.value
-            console.log(data);
-         });
-         try {
-            const result = await api.post('/business/create', data)
-            window.location.href = "search.html"
-         } catch (error) {
-            alert(error);
-         }
-
+  <script>
+    $("form").on("submit", async function (event) {
+      event.preventDefault();
+      const data = {}
+      $(this).serializeArray().forEach((item) => {
+        data[item.name] = item.value
+        console.log(data);
       });
-   </script>
+      try {
+        const result = await api.post('/business/create', data)
+        window.location.href = "search.html"
+      } catch (error) {
+        alert(error);
+      }
+
+    });
+  </script>
 
 
 

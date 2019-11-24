@@ -9,7 +9,9 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
    <link rel="stylesheet" href="assets/css/cadastros.css">
    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="js/api.js"></script>
    </script>
 </head>
 
@@ -23,21 +25,15 @@
    </nav>
 
    <div class="row">
-      <form class="col s9 push-s3">
+      <form class="col s9 push-s3" enctype="multipart/form-data">
 
          <div class="row container">
             <div class="row"></div>
-            <div class="row">
 
-               <div class="input-field col s7 ">
-
-                  <input name="nfantasia" type="text" placeholder="Nome Fantasia" class="validate" required />
-               </div>
-            </div>
 
             <div class="row ">
                <div class="input-field col s7">
-                  <input placeholder="Nome do Produto" name="nomeproduto" type="text" class="validate">
+                  <input placeholder="Nome do Produto" name="nome" type="text" class="validate">
 
                </div>
             </div>
@@ -49,9 +45,11 @@
                </div>
             </div>
 
+            
+
             <div class="row">
                <div class="input-field col s7">
-                  <input placeholder="Descrição" name="descricaoproduto" type="text" class="validate">
+                  <input placeholder="Descrição" name="descricao" type="text" class="validate">
 
                </div>
             </div>
@@ -59,11 +57,10 @@
             <div class="">
                <div class="file-field input-field">
 
-                  <div class="btn">
+                  <label class="btn">
                      <span>Anexos</span>
                      <input type="file" multiple />
-
-                  </div>
+                  </label>
 
 
                </div>
@@ -71,13 +68,17 @@
 
             <div class="row"></div>
             <div id="filterdiv" class="row col s9 push-s2">
-               <button type="submit" name="login_login" id="login_login"
-                  class="btn waves-effect waves-light">Salvar</button>
+               <button 
+                  type="submit" 
+                  name="login_login" 
+                  id="login_login" 
+                  class="btn waves-effect waves-light"
+               >
+                  Salvar
+               </button>
             </div>
-
-
          </div>
-         
+
       </form>
    </div>
 
@@ -92,8 +93,7 @@
             console.log(data);
          });
          try {
-            const result = await api.post('/business/create', data)
-            window.location.href = "search.html"
+            const result = await api.post('/products', data)
          } catch (error) {
             alert(error);
          }

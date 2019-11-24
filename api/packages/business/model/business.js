@@ -9,14 +9,15 @@ const BusinessSchema = new Schema({
     unique: false,
     lowercase: true
   },
-  cnpj: { type: String, required: true, select: false },
+  cnpjCpf: { type: String, required: true, select: false },
   estado: { type: String, required: true },
   cidade: { type: String, required: true },
-  ramo: { type: String, required: true }
+  ramo: { type: String, required: true },
+  idUser : { type: String, required: true}
 });
 
-BusinessSchema.pre('save', function (next) {
-    return next();
+BusinessSchema.pre("save", function(next) {
+  return next();
 });
 
 module.exports = mongoose.model("Business", BusinessSchema);
