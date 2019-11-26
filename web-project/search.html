@@ -16,31 +16,53 @@
 <body>
     <nav>
         <div class="nav-wrapper red darken-4 z-depth-2">Orderfy
-            <a href="#!" class="left hide-on-med-and-down">
-                <i class="material-icons ">menu</i>
-            </a>
+            <a style = "display:block" href="#!" data-target="slide-out" class="left sidenav-trigger">
+                <i class="material-icons ">menu</i></a>
         </div>
     </nav>
-    <div class=" row input-field"></div>
+    <div class="row input-field"></div>
+
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="images/churras.jpg">
+                </div>
+                <a href="#user"><img class="circle" src="images/x-do-jorge.jpg"></a>
+                <a href="#name"><span class="white-text name">Jorge Pereira</span></a>
+                <a href="#email"><span class="white-text email">jorgeelegal@gmail.com</span></a>
+            </div>
+        </li>
+        <li><a href="#!"><i class="material-icons">business</i>x-do-jorge Joinville</a></li>
+        <li><a href="#!"><i class="material-icons">exposure_plus_1</i> Crie um novo negócio!</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Opções</a></li>
+        <li><a class="waves-effect" href="#!">Seu catálogo</a></li>
+        <li><a class="waves-effect" href="#!">Ajuda</a></li>
+        <li><a class="waves-effect" href="#!">Nossa página</a></li>
+        <li><a class="waves-effect" href="#!">Central de atendimento ao cliente</a></li>
+    </ul>
 
     <!--Search Filters-->
     <div class="row input-field red darken-4 z-depth-2 col s12">
+
         <div id="searchdiv">
             <nav>
                 <div class="nav-wrapper">
-                        <div class="input-field red darken-4 z-depth-2">
-                            <input id="search" type="search"
-                                placeholder="Digite um produto, cidade ou empresa para localizar o que deseja..."
-                                required>
-                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                            <i class="material-icons">close</i>
-                        </div>
+                    <div class="input-field red darken-4 z-depth-2">
+                        <input id="search" type="search"
+                            placeholder="Digite um produto, cidade ou empresa para localizar o que deseja..." required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
                 </div>
             </nav>
         </div>
 
         <!--Button Filter-->
-        <div id="filterdiv" class=" row center">
+        <div id="filterdiv" class="center">
             <a href="#filters1" class="waves-effect waves-light btn modal-trigger">Filtrar
                 <i class="material-icons right">filter_list</i>
             </a>
@@ -188,9 +210,6 @@
     </div>
     <!-- ---END MODAL FILTER--- -->
 
-    <div class="center" id="drop-down-div">
-        <a href="#cards" id="view" class="btn"><i id="view" class="large material-icons">expand_more</i></a>
-    </div>
     <div class="row center">
         <a href="#sort1" class="waves-effect waves-light btn modal-trigger">Ordenar<i
                 class="material-icons right">swap_vert</i></a>
@@ -217,20 +236,21 @@
     <!--Script-->
     <script>
         if (!window.localStorage.getItem("_TOKEN_")) {
-            window.location.href = "login.html";
+            //    window.location.href = "login.html";
         }
 
         $(document).ready(function () {
             $('.modal').modal();
             $('select').formSelect();
+            $('.sidenav').sidenav();
         });
     </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/api.js"></script>
     <script>
         function listarProdutos(search) {
-            api.get('/products',{
-                params:{
+            api.get('/products', {
+                params: {
                     search
                 }
             }).then((res) => {
@@ -258,9 +278,9 @@
             });
         }
 
-        function  listarEmpresas(search){
-            api.get('/business',{
-                params:{
+        function listarEmpresas(search) {
+            api.get('/business', {
+                params: {
                     search
                 }
             }).then((res) => {
@@ -302,7 +322,7 @@
             listarProdutos();
             listarEmpresas();
             const listarProdutosDeb = debounce(listarProdutos, 500);
-            $("#search").on("input", function() {
+            $("#search").on("input", function () {
                 listarProdutosDeb(this.value);
             })
         });
