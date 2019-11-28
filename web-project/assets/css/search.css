@@ -7,7 +7,7 @@ body{
     font-size: 13pt;
     font-weight: 300;
     line-height: 1.65;
-    background-color: #ffa1a1;
+    background-color:#970d0dc5;
 }
 
 nav{
@@ -33,7 +33,7 @@ nav{
     padding: 3em 0 2em 0;
 }
 #searchdiv{
-    padding: 8em 0 6em 0;
+    padding: 8em 0  6em 0;
 }
 
 #drop-down-div{
