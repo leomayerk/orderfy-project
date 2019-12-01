@@ -15,23 +15,22 @@
 	<script src="js/api.js"></script>
 </head>
 
-<body>
-	
+<body> 
 	<nav>
 		<div class="nav-wrapper red darken-4 z-depth-2">Orderfy
 			<a href="#!" class="left hide-on-med-and-down">
 			</a>
 		</div>
-		
+
 	</nav>
 
 	<div class=" row input-field"></div>
 
 
-	<div class="row">
+	<div class="row input-field col s12">
 		<form class="col s9 push-s3">
 			<div class="container">
-				<div class="row col 12">
+				<div class="row col s12 m6">
 
 				</div>
 
@@ -40,21 +39,23 @@
 
 					<div class="divider"></div>
 					<div class="section">
-						<p>Lista de produtos....preço</p>
-						<h5>Valor total da compra: preço total</h5>
+						<p>Valor do produto:</p>
+						<input name="productPrice" type="text">
+						<p>Quantidade</p> <input name="quantity" type="number">
+						<h5>Valor total da compra:</h5>
+						<input name="totalPrice" type="text">
 					</div>
-					
 				</div>
-
 			</div>
-
-			<div id="filterdiv" class="row col s9 push-s1">
-				<button name="cancel" id="cancel"  onclick="deleteCart()" class="btn waves-effect waves-light">Cancelar compra</button>
-				<button type="submit" name="compra_compra" id="compra_compra"
-					class="btn waves-effect waves-light">Confirmar compra</button>
-			</div>
-
 		</form>
+		<div class="row input-field col s12">
+				<div class="center">
+					<a name="cancel" id="cancel" onclick="deleteCart()" class="btn waves-effect waves-light">Cancelar <i
+							class="material-icons right">close</i></a>
+					<a name="compra_compra" id="submit" class="btn waves-effect waves-light" href="meus_pedidos.html">Confirmar <i
+							class="material-icons right">done</i></a>
+				</div>
+		</div>
 
 	</div>
 	<!--Jquery-->
@@ -84,7 +85,6 @@
 				document.getElementById("cart").innerHTML = card.join('\n')
 			});
 		}
-
 		function deleteCart() {
 			api.delete('/cart/cancel');
 			window.location.href = "search.html";
@@ -92,6 +92,7 @@
 		if (!window.localStorage.getItem("_TOKEN_")) {
 			//    window.location.href = "login.html";
 		}
+
 		$(document).ready(function () {
 			$('.modal').modal();
 			$('select').formSelect();

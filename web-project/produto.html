@@ -45,7 +45,7 @@
                </div>
             </div>
 
-            
+
 
             <div class="row">
                <div class="input-field col s7">
@@ -59,7 +59,7 @@
 
                   <label class="btn">
                      <span>Anexo</span>
-                     <input name="anexo" type="file"/>
+                     <input name="anexo" type="file" />
                   </label>
 
 
@@ -68,14 +68,12 @@
 
             <div class="row"></div>
             <div id="filterdiv" class="row col s9 push-s2">
-               <button 
-                  type="submit" 
-                  name="login_login" 
-                  id="login_login" 
-                  class="btn waves-effect waves-light"
-               >
+               <a href ="search.html" type="submit" name="login_login" id="login_login" class="btn waves-effect waves-light">
+                  Cancelar
+               </a>
+               <a href ="search.html" type="cancel" name="cancel" id="login_login" class="btn waves-effect waves-light">
                   Salvar
-               </button>
+               </a>
             </div>
          </div>
 
@@ -89,7 +87,7 @@
          event.preventDefault();
          const data = new FormData();
          data.append("anexo", document.querySelector("[name='anexo']").files[0])
-         
+
 
          $(this).serializeArray().forEach((item) => {
             data.append(item.name, item.value);

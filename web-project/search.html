@@ -38,11 +38,13 @@
         <li>
             <div class="divider"></div>
         </li>
-        <li><a class="subheader">Opções</a></li>
-        <li><a class="waves-effect" href="#!">Seu catálogo</a></li>
-        <li><a class="waves-effect" href="#!">Ajuda</a></li>
-        <li><a class="waves-effect" href="#!">Nossa página</a></li>
-        <li><a class="waves-effect" href="#!">Central de atendimento ao cliente</a></li>
+		<li><a class="subheader">Opções</a></li>
+		<li><a class="waves-effect" href="search.html">Home - Buscar</a></li>
+		<li><a class="waves-effect" href="#!">Seu catálogo</a></li>
+		<li><a class="waves-effect" href="meus_pedidos.html">Meus Pedidos</a></li>
+		<li><a class="waves-effect" href="#!">Ajuda</a></li>
+		<li><a class="waves-effect" href="home.html">Nossa página</a></li>
+		<li><a class="waves-effect" href="#!">Central de atendimento ao cliente</a></li>
     </ul>
 
     <!--Search Filters-->
@@ -326,7 +328,6 @@
                 listarProdutosDeb(this.value);
             })
         });
-
         function addProduct(productId) {
             api.post(`/cart?productId=${productId}`)
             alert("produto adicionado");

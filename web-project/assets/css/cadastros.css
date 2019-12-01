@@ -117,3 +117,14 @@ nav{
     z-index: -1;
 	transform: scale(0);
 }
+
+.card-stacked{
+	color:black;
+}
+#order-cards{
+	color: #ffffff;
+}
+
+#done{
+    background-color: #00e676;
+}
