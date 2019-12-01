@@ -47,18 +47,18 @@ handlers.create = async (req, res) => {
 
 handlers.update = async (req, res) => {
   const { razaoSocial, nomeFantasia, cnpjCpf, estado, cidade, ramo } = req.body;
-
+  
   if (!razaoSocial || !nomeFantasia || !cnpjCpf || !estado || !cidade ||!ramo) {
     return res.send({ error: "dados insuficientes para a atualização" });
   }
-
+  
   try {
     const business = await Business.findOne({ cnpjCpf });
-
+    
     if (!business) {
       return res
-        .status(404)
-        .send({ error: "Seu cnpj está incorreto" });
+      .status(404)
+      .send({ error: "Seu cnpj está incorreto" });
     }
     
     

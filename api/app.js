@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const session = require("express-session");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const config = require("./config/config");
@@ -7,7 +8,7 @@ const indexRoute = require("./packages/index");
 const usersRoute = require("./packages/users/routes");
 const businessRoute = require("./packages/business/routes");
 const productsRoute = require("./packages/products/routes");
-
+const cartRoute = require("./packages/cart/routes");
 
 const url = config.bd_string;
 const options = {
@@ -36,15 +37,24 @@ mongoose.connection.on("connected", () => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(express.static('files'));
+app.use(
+  session({
+    secret: "aloha",
+    resave: true,
+    saveUninitialized: true
+    //cookie: { secure: true }
+  })
+);
+app.use(express.static("files"));
 app.use("/api/users/", usersRoute);
 app.use("/api/business/", businessRoute);
 app.use("/api/products/", productsRoute);
+app.use("/api/cart/", cartRoute);
 
 app.all("/", (req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
 });
 
 app.listen(3000);
