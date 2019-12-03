@@ -14,12 +14,12 @@ const productSchema = {
 
 describe("teste das funcoes", () => {
   it("create", () => {
-    const produto = productSearch.create('pao', 'kakakka');
+    const produto = productSearch.create('pao', 'pão quentinho');
     chai.expect(produto).to.containSubset({productSchema});
   });
   it("list", () => {
-    productSearch.create("pao", "kakakka");
-    productSearch.create("paozinho", "ka122kakka");
+    productSearch.create("batata", "batata recheada de vento");
+    productSearch.create("guacamole", "guacamole");
 
     const produto = productSearch.list();
 
