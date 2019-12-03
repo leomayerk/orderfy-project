@@ -18,7 +18,7 @@
         <div class="nav-wrapper red darken-4 z-depth-2">Orderfy
             <a style="display:block" href="#!" data-target="slide-out" class="left sidenav-trigger">
                 <i class="material-icons ">menu</i></a>
-            <a style="display:block" href="carrinho.html" class="right sidenav-trigger btn-medium"><i class="material-icons">shopping_cart</i></a>
+                <a style="display:block" href="carrinho.html" class="right sidenav-trigger btn-medium"><i class="material-icons">shopping_cart</i></a>
         </div>
     </nav>
     <div class="row input-field"></div>
@@ -35,13 +35,13 @@
             </div>
         </li>
         <li><a href="#!"><i class="material-icons">business</i>x-do-jorge Joinville</a></li>
-        <li><a href="#!"><i class="material-icons">exposure_plus_1</i> Crie um novo negócio!</a></li>
+        <li><a href="entidade.html"><i class="material-icons">exposure_plus_1</i> Crie um novo negócio!</a></li>
         <li>
             <div class="divider"></div>
         </li>
-		<li><a class="subheader">Opções</a></li>
+        <li><a class="subheader">Opções</a></li>
 		<li><a class="waves-effect" href="search.html">Home - Buscar</a></li>
-		<li><a class="waves-effect" href="#!">Seu catálogo</a></li>
+		<li><a class="waves-effect" href="produto.html">Seu catálogo</a></li>
 		<li><a class="waves-effect" href="meus_pedidos.html">Meus Pedidos</a></li>
 		<li><a class="waves-effect" href="#!">Ajuda</a></li>
 		<li><a class="waves-effect" href="home.html">Nossa página</a></li>
@@ -241,7 +241,6 @@
         if (!window.localStorage.getItem("_TOKEN_")) {
             //    window.location.href = "login.html";
         }
-
         $(document).ready(function () {
             $('.modal').modal();
             $('select').formSelect();
@@ -272,7 +271,6 @@
                                 <span class="card-title grey-text text-darken-4">${p.nome}<i
                                         class="material-icons right">close</i></span>
                                 <p>${p.descricao}</p>
-                                <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a
                             </div>
                         </div>
                     </div>
@@ -281,7 +279,6 @@
                 document.getElementById("cardsProducts").innerHTML = products.join('\n')
             });
         }
-
         function listarEmpresas(search) {
             api.get('/business', {
                 params: {
@@ -295,7 +292,7 @@
                                 <img class="activator" src="images/churras.jpg">
                             </div>
                             <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">%${b.nomeFantasia}<i
+                                <span class="card-title activator grey-text text-darken-4">${b.nomeFantasia}<i
                                     class="material-icons right">more_vert</i></span>
                                 <p><a href="#">Visitar Catalogo</a></p>
                             </div>
@@ -311,7 +308,6 @@
                 document.getElementById("cardsBusiness").innerHTML = business.join('\n')
             });
         }
-
         function debounce(fn, delay) {
             let count = null;
             return (...args) => {
@@ -321,7 +317,6 @@
                 }, delay);
             }
         }
-
         $(document).ready(() => {
             listarProdutos();
             listarEmpresas();

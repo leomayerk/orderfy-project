@@ -18,8 +18,8 @@
 <body>
    <nav>
       <div class="nav-wrapper red darken-4 z-depth-2">Orderfy
-         <a href="#!" class="left hide-on-med-and-down">
-            <i class="material-icons ">menu</i>
+         <a href="search.html" class="left hide-on-med-and-down">
+            <i class="material-icons">menu</i>
          </a>
       </div>
    </nav>
@@ -68,12 +68,12 @@
 
             <div class="row"></div>
             <div id="filterdiv" class="row col s9 push-s2">
-               <a href ="search.html" type="submit" name="login_login" id="login_login" class="btn waves-effect waves-light">
-                  Cancelar
-               </a>
                <a href ="search.html" type="cancel" name="cancel" id="login_login" class="btn waves-effect waves-light">
-                  Salvar
+                  Cancelar 
                </a>
+               <button type="submit" name="login" class="btn waves-effect waves-light">
+                  Salvar
+               </button>
             </div>
          </div>
 
@@ -98,6 +98,7 @@
                   'content-type': 'multipart/form-data'
                }
             })
+            window.location.href = "search.html"
          } catch (error) {
             alert(error);
          }
